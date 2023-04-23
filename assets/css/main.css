@@ -177,4 +177,12 @@ a {
     font-size: 13px;
     line-height: 15px;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.main-container button:hover {
+    color: #0C0B0B;
+    background-color: transparent;
+    border: 2px solid #0C0B0B;
+    transition: all 0.3s;
 }
