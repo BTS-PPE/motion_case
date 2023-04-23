@@ -1,18 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Baloo Bhai');
 
 * {
 	box-sizing: border-box;
 }
 
 body {
-	background: #f6f5f7;
+	background: #E5E5E5;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
+	font-family: 'Baloo Bhai', sans-serif;
+	height: 96vh;
 	margin: -20px 0 50px;
 }
 
@@ -46,8 +47,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #0C0B0B;
+	background-color: #0C0B0B;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -82,11 +83,24 @@ form {
 }
 
 input {
-	background-color: #eee;
+	background-color: #F5F5F7;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5F7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0C0B0B;
 }
 
 .container {
@@ -160,9 +174,7 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #0C0B0B;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
