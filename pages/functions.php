@@ -59,8 +59,6 @@
             $sql = "SELECT * FROM `customer` WHERE login = '" . $_POST["login"] . "' AND mdp = '" . $_POST["password"] . "'";
             $result = mysqli_query($db_customer, $sql);
             if ($result) {
-                $row = $result->fetch_array();
-                // $_SESSION['login'] = $row['login'];
                 header("Location: index.php");
             } else {
                 header("Location: pages/login.php");

@@ -1,8 +1,10 @@
 <?php 
     require_once("pages/db.php");
     session_start();
+    $id_session = session_id();
     $requestSqlForGetItems = "SELECT * FROM `coque` JOIN `motif` ON coque.Id_motif = motif.Id_motif JOIN `modele` ON coque.Id_modele = modele.Id_modele";
     $result = mysqli_query($db_connec, $requestSqlForGetItems);
+    $_SESSION["login"] = "";
     // if(!isset($_SESSION["login"])){
     //     header("Location: pages/login.php");
     //     exit(); 
@@ -32,8 +34,8 @@
                     </form>
                 </div>
                 <ul>
-                    <li><a href="pages/login.php"><i class="fas fa-user-alt"></i></a></li>
-                    <li><a href="pages/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a id="login" href="pages/login.php"><i class="fas fa-user-alt"></i></a></li>
+                    <li><a id="cart" href="pages/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </nav>
@@ -57,13 +59,21 @@
 
                 if (isset($_POST["username"])) {
                     LoginUser();
-                    $_SESSION["login"] = "";
+                    $_SESSION['login'] = $_POST['username'];
                 }
+
+                // if $_SESSION["login"] != "" {
+                //     echo '<script>document.getElementById("login").innerHTML = "<i class="fas fa-user-alt"></i> '.$_SESSION["login"].'";</script>';
+                // }
+
+                // echo "Session " . $_SESSION["login"];
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="item">';
                     echo '<div class="item-img">';
+                    echo '<a href="pages/item.php?id='.$row['Id_Coque'].'">';
                     echo '<img src="assets/images/items/'.$row['Id_Coque'].'/principal.jpg">';
+                    echo '</a>';
                     echo '</div>';
                     echo '<div class="item-info">';
                     echo '<h2>'.$row['motif'].'</h2>';
