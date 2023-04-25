@@ -37,8 +37,8 @@
                     </form>
                 </div>
                 <ul>
-                    <li><a id="login" href="pages/login.php"><i class="fas fa-user-alt"></i></a></li>
-                    <li><a id="cart" href="pages/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a id="login" href="login.php"><i class="fas fa-user-alt"></i></a></li>
+                    <li><a id="cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </nav>
