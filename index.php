@@ -62,6 +62,12 @@
                     $_SESSION['login'] = $_POST['username'];
                 }
 
+                if (isset($_POST["searchBar"])) {
+                    $request = $_POST["searchBar"];
+                    $sql = "SELECT * FROM `coque` JOIN `motif` ON coque.Id_motif = motif.Id_motif AND motif.motif LIKE '%$request%' JOIN `modele` ON coque.Id_modele = modele.Id_modele";
+                    $result = mysqli_query($db_connec, $sql);
+                }
+
                 // if $_SESSION["login"] != "" {
                 //     echo '<script>document.getElementById("login").innerHTML = "<i class="fas fa-user-alt"></i> '.$_SESSION["login"].'";</script>';
                 // }

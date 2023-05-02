@@ -1,6 +1,9 @@
 <?php 
     require_once("db.php");
     $itemId = $_GET["id"];
+    $sql = "SELECT * FROM coque JOIN `motif` ON coque.Id_motif = motif.Id_motif AND coque.Id_Coque = " . $itemId . " JOIN `modele` ON coque.Id_modele = modele.Id_modele";
+    $itemResult = mysqli_query($db_connec, $sql);
+    $item = mysqli_fetch_assoc($itemResult);
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +46,25 @@
             </div>
         </nav>
 
-        <div class="images">
-            <img id='mainImage' class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
-            <img class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
-            <img class='image' src='../assets/images/items/<?= $itemId ?>/second.jpg'>
-            <img class='image' src='../assets/images/items/<?= $itemId ?>/third.jpg'>
-            <img class='image' src='../assets/images/items/<?= $itemId ?>/fourth.jpg'>
-            <img class='image' src='../assets/images/items/<?= $itemId ?>/fifth.jpg'>
+        <div class="container">
+            <div class="images">
+                <img id='mainImage' class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
+                <img class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
+                <img class='image' src='../assets/images/items/<?= $itemId ?>/second.jpg'>
+                <img class='image' src='../assets/images/items/<?= $itemId ?>/third.jpg'>
+                <img class='image' src='../assets/images/items/<?= $itemId ?>/fourth.jpg'>
+                <img class='image' src='../assets/images/items/<?= $itemId ?>/fifth.jpg'>
+            </div>
+
+            <div class="details-container">
+                <h2><?= $item["motif"] ?></h2>
+                <p><?= $item["modele"] ?></p>
+                <p>Prix : <?= $item["Prix"] ?>€</p>
+                <p>Description : jgfkdgjfkdghdjkghdfjkghfdgdhfjg</p>
+                <button type="submit">Ajouter au panier</button>
+            </div>
         </div>
+
         <script src="../assets/js/item.js?=1584529395"></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     </body>
