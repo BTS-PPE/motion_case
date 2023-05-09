@@ -17,6 +17,17 @@ a {
     color: white;
 }
 
+.titleError {
+    position: absolute;
+    left: 30%;
+    /* width: 100%; */
+    font-family: 'Baloo Bhai';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #0C0B0B;
+}
+
 ::-webkit-scrollbar {
     width: 4px;
     border-radius: 20px;

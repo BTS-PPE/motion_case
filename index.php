@@ -40,18 +40,6 @@
             </div>
         </nav>
         <div class="main-container">
-            <!-- <div class="item">
-                <div class="item-img">
-                    <img src="assets/images/items/1/principal.jpg">
-                </div>
-                <div class="item-info">
-                    <h2>Naruto</h2>
-                    <p>Apple iPhone 11 Pro Max 256GB - Midnight Green</p>
-                    <p>Prix: 1.299,00€</p>
-                </div>
-                <button type="submit">Ajouter au panier</button>
-            </div> -->
-
             <?php
                 if (isset($_POST["login"])) {
                     CreateNewUser();
@@ -66,6 +54,9 @@
                     $request = $_POST["searchBar"];
                     $sql = "SELECT * FROM `coque` JOIN `motif` ON coque.Id_motif = motif.Id_motif AND motif.motif LIKE '%$request%' JOIN `modele` ON coque.Id_modele = modele.Id_modele";
                     $result = mysqli_query($db_connec, $sql);
+                    if (mysqli_num_rows($result) == 0) {
+                        echo '<div class="titleError">Aucun résultat pour votre recherche</div>';
+                    }
                 }
 
                 // if $_SESSION["login"] != "" {

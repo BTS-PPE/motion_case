@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="../assets/css/main.css?=1584529395">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo Bhai">
-        <title><?= $itemId ?></title>
+        <title>Motion Case | <?= $item["motif"] ?></title>
     </head>
     <body>
         <?php 
@@ -26,6 +26,9 @@
             // $row = mysqli_fetch_row($result_);
 
             // echo $row;
+            if (isset($_POST["searchBar"])) {
+                header("Location: ../index.php");
+            }
         ?>
 
         <nav>
