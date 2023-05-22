@@ -51,19 +51,19 @@
 
         <div class="container">
             <div class="images">
-                <img id='mainImage' class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
-                <img class='image' src='../assets/images/items/<?= $itemId ?>/principal.jpg'>
-                <img class='image' src='../assets/images/items/<?= $itemId ?>/second.jpg'>
-                <img class='image' src='../assets/images/items/<?= $itemId ?>/third.jpg'>
-                <img class='image' src='../assets/images/items/<?= $itemId ?>/fourth.jpg'>
-                <img class='image' src='../assets/images/items/<?= $itemId ?>/fifth.jpg'>
+                <img id='mainImage' class='image' src='../assets/images/items/<?= $item["motif"] ?>/principal.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/principal.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/second.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/third.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/fourth.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/fifth.jpg'>
             </div>
 
             <div class="details-container">
                 <h2><?= $item["motif"] ?></h2>
                 <p><?= $item["modele"] ?></p>
                 <p>Prix : <?= $item["Prix"] ?>€</p>
-                <p>Description : jgfkdgjfkdghdjkghdfjkghfdgdhfjg</p>
+                <p>Description : <?= $item['description'] ?></p>
                 <button type="submit">Ajouter au panier</button>
             </div>
         </div>

@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `coque` (
   `Marque` varchar(50) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'MotionCase',
   `Id_Motif` int(11) NOT NULL,
   `Id_Modele` int(11) NOT NULL,
+  `description` LONGTEXT NULL,
   PRIMARY KEY (`Id_Coque`),
   KEY `Id_Coque_Motif_FK` (`Id_Motif`),
   KEY `Id_Coque_Modele0_FK` (`Id_Modele`)
