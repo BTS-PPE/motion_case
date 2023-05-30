@@ -43,7 +43,7 @@
     function CheckIfUserExist($type) {
         require("db.php");
 
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $password = hash('sha256', $_POST["password"]);
         $sql = "SELECT * FROM `customer` WHERE login = '" . $_POST[$type] . "' AND mdp = '" . $password . "'";
         $result = mysqli_query($db_customer, $sql);
 
