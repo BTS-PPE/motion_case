@@ -82,7 +82,8 @@
                     echo '<p>'.$row['modele'].'</p>';
                     echo '<p>Prix: '.$row['Prix'].'€</p>';
                     echo '</div>';
-                    echo '<button type="submit">Ajouter au panier</button>';
+                    // echo '<button type="submit">Ajouter au panier</button>';
+                    echo '<input type="button" onclick="location.href=`pages/cart.php?action=ajout&amp;l='.$row['motif'].'&amp;q=1&amp;p='.$row['Prix'].'`" value="Ajouter au panier">';
                     echo '</div>';
                 }
             ?>

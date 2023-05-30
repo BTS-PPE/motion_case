@@ -1,5 +1,8 @@
 <?php 
     require_once("db.php");
+    // $test = password_hash("Motocross2004!", PASSWORD_DEFAULT);
+    // $test2 = password_verify("Motocross2004!", $test);
+    // echo $test2;
 ?>
 
 <!DOCTYPE html>
