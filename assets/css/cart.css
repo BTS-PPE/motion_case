@@ -1,0 +1,186 @@
+/* * {
+	box-sizing: border-box;
+} */
+
+body {
+    background: #E5E5E5;
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5F7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0C0B0B;
+}
+
+::-moz-selection {
+    background-color: #0C0B0B;
+    color: #F5F5F7
+}
+
+::selection {
+    background-color: #0C0B0B;
+    color: #F5F5F7
+}
+
+a {
+    color: #0C0B0B;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Baloo Bhai';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #0C0B0B;
+}
+
+.title {
+    position: relative;
+    top: 35%;
+    font-family: 'Baloo Bhai';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #0C0B0B;
+}
+
+.main-container {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 5%;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* background-color: red; */
+}
+
+.main-container .item {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    background-color: #F5F5F7;
+    border-radius: 14px;
+    text-align: center;
+}
+
+/* .main-container .item .item-img {
+    position: relative;
+    top: 5%;
+    left: 1%;
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+} */
+
+.main-container .item .item-img img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+}
+
+.main-container .item-info {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .item-info h2 {
+    font-family: 'Baloo Bhai';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 26px;
+}
+
+.main-container .item-info p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main-container input[type="number"] {
+    position: relative;
+    width: 50px;
+    border-radius: 8px;
+    background-color: transparent;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main-container input:focus {
+    outline: none;
+}
+
+.main-container input[type="submit"] {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0C0B0B;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.main-container input[type="submit"]:hover {
+    color: #0C0B0B;
+    background-color: transparent;
+    border: 2px solid #0C0B0B;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container .item-info h2 {
+        font-family: 'Baloo Bhai';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 26px;
+    }
+
+    .main-container .item-info h3 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+    }
+}

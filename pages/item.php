@@ -64,7 +64,8 @@
                 <p><?= $item["modele"] ?></p>
                 <p>Prix : <?= $item["Prix"] ?>€</p>
                 <p>Description : <?= $item['description'] ?></p>
-                <button type="submit">Ajouter au panier</button>
+                <?php echo '<input type="button" onclick="location.href=`cart.php?action=ajout&amp;l='.$item['motif'].'&amp;q=1&amp;p='.$item['Prix'].'`" value="Ajouter au panier">'; ?>
+                <!-- <button type="submit">Ajouter au panier</button> -->
             </div>
         </div>
 

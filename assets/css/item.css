@@ -95,7 +95,15 @@ a {
     line-height: 24px;
 }
 
-.details-container button {
+.details-container .item-info p:nth-child(3) {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.details-container input {
     position: relative;
     width: 120px;
     height: 40px;
@@ -113,7 +121,7 @@ a {
     transition: all 0.3s;
 }
 
-.details-container button:hover {
+.details-container input:hover {
     color: #0C0B0B;
     background-color: transparent;
     border: 2px solid #0C0B0B;

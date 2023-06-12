@@ -40,6 +40,14 @@
         return $total;
     }
 
+    function IfUserIsLogin() {
+        if (isset($_SESSION['user']['login'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function CheckIfUserExist($type) {
         require("db.php");
 
@@ -61,6 +69,15 @@
             $sql = "SELECT * FROM `customer` WHERE login = '" . $_POST["login"] . "' AND mdp = '" . $password . "'";
             $result = mysqli_query($db_customer, $sql);
             if ($result) {
+                if (!isset($_SESSION["user"])) {
+                    $_SESSION["user"] = array();
+                }
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $_SESSION["user"]["login"] = $row["login"];
+                    $_SESSION["user"]["mail"] = $row["mail"];
+                    $_SESSION["user"]["name"] = $row["nom"];
+                    $_SESSION["user"]["admin"] = $row["admin"];
+                }
                 header("Location: index.php");
             } else {
                 header("Location: pages/login.php");
@@ -78,6 +95,15 @@
             $sql = "INSERT INTO `customer` (login, mdp, mail, nom, prenom, admin) VALUES ('" . $_POST["login"] . "', '" . $password . "', '" . $_POST["email"] . "', '" . $_POST["name"] . "', 'Test', '0')";
             $result = mysqli_query($db_customer, $sql);
             if ($result) {
+                if (!isset($_SESSION["user"])) {
+                    $_SESSION["user"] = array();
+                }
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $_SESSION["user"]["login"] = $row["login"];
+                    $_SESSION["user"]["mail"] = $row["mail"];
+                    $_SESSION["user"]["name"] = $row["name"];
+                    $_SESSION["user"]["admin"] = $row["admin"];
+                };
                 return true;
                 header("Location: ../index.php");
             } else {
@@ -125,8 +151,7 @@
 
     function DeleteItemFromCart($libelleProduit){
         //Si le panier existe
-        if (CreateCart() && !IsLocked())
-        {
+        if (CreateCart() && !IsLocked()) {
            //Nous allons passer par un panier temporaire
            $tmp=array();
            $tmp['libelleProduit'] = array();
@@ -145,12 +170,12 @@
      
            }
            //On remplace le panier en session par notre panier temporaire à jour
-           $_SESSION['panier'] =  $tmp;
+           $_SESSION['panier'] = $tmp;
            //On efface notre panier temporaire
            unset($tmp);
+        } else {
+            echo "Un problème est survenu veuillez contacter l'administrateur du site.";
         }
-        else
-        echo "Un problème est survenu veuillez contacter l'administrateur du site.";
     }
 
     function EditQtqOfItem($libelleProduit,$qteProduit){
