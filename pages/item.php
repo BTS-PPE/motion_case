@@ -51,12 +51,21 @@
 
         <div class="container">
             <div class="images">
-                <img id='mainImage' class='image' src='../assets/images/items/<?= $item["motif"] ?>/principal.jpg'>
+                <?php 
+                    $images = GetAllImagesFromMotif($item["motif"]);
+                    for ($i = 0; $i < count($images); $i++) {
+                        if ($i == 0) {
+                            echo "<img id='mainImage' class='image' src='../assets/images/items/" . $item["motif"] . "/" . $images[$i] . "'>";
+                        }
+                        echo "<img class='image' src='../assets/images/items/" . $item["motif"] . "/" . $images[$i] . "'>";
+                    }
+                ?>
+                <!-- <img id='mainImage' class='image' src='../assets/images/items/<?= $item["motif"] ?>/principal.jpg'>
                 <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/principal.jpg'>
                 <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/second.jpg'>
                 <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/third.jpg'>
                 <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/fourth.jpg'>
-                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/fifth.jpg'>
+                <img class='image' src='../assets/images/items/<?= $item["motif"] ?>/fifth.jpg'> -->
             </div>
 
             <div class="details-container">

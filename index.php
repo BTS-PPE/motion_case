@@ -55,6 +55,7 @@
 
                 if (isset($_POST["login"])) {
                     CreateNewUser();
+                    $_SESSION['login'] = $_POST['username'];
                 } 
 
                 if (isset($_POST["username"])) {

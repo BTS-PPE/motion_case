@@ -9,6 +9,15 @@
         return $_SESSION['cart'];
     }
 
+    function GetAllImagesFromMotif($motif) {
+        $images = array();
+        $folder = "../assets/images/items/" . $motif . "/";
+        $imagesFolder = glob($folder . "*.jpg");
+        foreach ($imagesFolder as $filename) {
+            array_push($images, basename($filename));
+        }
+        return $images;
+    }
 
     function AddToCart($id) {
         if (isset($_SESSION['cart'][$id])) {
