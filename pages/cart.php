@@ -43,6 +43,7 @@
 
         Case "suppression":
             DeleteItemFromCart($l);
+            header('Location: cart.php');
             break;
 
         Case "refresh" :

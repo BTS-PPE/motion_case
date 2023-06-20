@@ -12,7 +12,7 @@
     function GetAllImagesFromMotif($motif) {
         $images = array();
         $folder = "../assets/images/items/" . $motif . "/";
-        $imagesFolder = glob($folder . "*.jpg");
+        $imagesFolder = glob($folder . "*.{png,jpg,gif}", GLOB_BRACE);
         foreach ($imagesFolder as $filename) {
             array_push($images, basename($filename));
         }
